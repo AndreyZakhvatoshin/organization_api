@@ -128,6 +128,13 @@
       <path value="$PROJECT_DIR$/backend/vendor/guzzlehttp/promises" />
       <path value="$PROJECT_DIR$/backend/vendor/composer" />
       <path value="$PROJECT_DIR$/backend/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/backend/vendor/mpociot/reflection-docblock" />
+      <path value="$PROJECT_DIR$/backend/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/backend/vendor/shalvah/upgrader" />
+      <path value="$PROJECT_DIR$/backend/vendor/shalvah/clara" />
+      <path value="$PROJECT_DIR$/backend/vendor/knuckleswtf/scribe" />
+      <path value="$PROJECT_DIR$/backend/vendor/spatie/data-transfer-object" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />

@@ -16,7 +16,9 @@ class CheckApiKey
     public function handle(Request $request, Closure $next): Response
     {
         $apiKey = $request->header('X-API-KEY');
-
+        if ($request->getRequestUri() === '/docs') {
+            return $next($request);
+        }
         if (!$apiKey || $apiKey !== config('app.api_key')) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
