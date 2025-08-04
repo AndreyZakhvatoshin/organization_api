@@ -28,7 +28,7 @@ services:
       - ./backend:/app
 
   db:
-    image: postgres:latest 
+    image: postgis/postgis:latest
     container_name: postgres_db
     environment:
       POSTGRES_DB: mydatabase
@@ -38,6 +38,7 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+      - ./docker/db-init:/docker-entrypoint-initdb.d
     restart: always
 
 volumes:
