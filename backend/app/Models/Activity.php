@@ -32,6 +32,11 @@ class Activity extends Model
 
     public function organizations()
     {
-        return $this->belongsToMany(Organization::class);
+        return $this->belongsToMany(
+            Organization::class,
+            'organization_activity',
+            'activity_id',
+            'organization_id'
+        );
     }
 }
