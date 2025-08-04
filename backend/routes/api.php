@@ -11,13 +11,10 @@ Route::middleware([\App\Http\Middleware\CheckApiKey::class])->group(function () 
     Route::get('/buildings/{building}/organizations', [BuildingController::class, 'organizations']);
 
     // Организации по деятельности
-    Route::get('/activities/{activity}/organizations', [ActivityController::class, 'organizations']);
+    Route::get('/activities/{activity}/organizations', [ActivityController::class, 'byActivity']);
 
     // Поиск по радиусу
     Route::get('/organizations/nearby', [OrganizationController::class, 'nearby']);
-
-    // Список зданий
-    Route::get('/buildings', [BuildingController::class, 'index']);
 
     // Информация об организации
     Route::get('/organizations/{organization}', [OrganizationController::class, 'show']);
