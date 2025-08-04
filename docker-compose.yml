@@ -1,0 +1,44 @@
+services:
+  nginx:
+    build:
+      context: docker/nginx
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8080:80"
+    depends_on:
+      - php-fpm
+
+  php-fpm:
+    build:
+      context: docker/php-fpm
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - db
+    user: "${UID}:${GID}"
+    environment:
+      UID: ${UID}
+      GID: ${GID}
+
+  php-cli:
+    build:
+      context: docker/php-cli
+    volumes:
+      - ./backend:/app
+
+  db:
+    image: postgres:latest 
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  pgdata:
