@@ -66,3 +66,7 @@ docker-compose exec php-fpm php artisan migrate --seed
 7. Генерация документации
 
 docker-compose exec php-fpm php artisan scribe:generate
+
+8. Просмотр документации
+
+http://localhost:8080/docs
